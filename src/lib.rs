@@ -7,6 +7,6 @@ extern "C" {
 }
 
 #[pg_guard]
-pub extern "C" fn _PG_init() {
+pub extern "C-unwind" fn _PG_init() {
     unsafe { init_pg_duckdb() };
 }
